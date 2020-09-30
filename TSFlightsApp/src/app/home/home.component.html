@@ -1,1 +1,11 @@
-<p>home works!</p>
+<div>
+    <!-- *ngFor will loop over each item in flights. flight_results is the CSS class (see .scss file) -->
+    <div *ngFor="let flight of flights" class="flight_results">
+        <!-- render each bit of info we need for each flight -->
+        <div class="flight_number">{{flight.flightNumber}}</div>
+        <!-- | date is a "Pipeline", in angular it can transform data. This makes our raw date more readable when displayed -->
+        <div class="departs">{{flight.depart | date}}</div>
+        <div class="arrivces">{{flight.arrive | date}}</div>
+        <div class="nonstop">{{flight.nonstop}}</div>
+    </div>
+</div>

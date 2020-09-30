@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { FlightsService } from '../flights.service';
+import { Flight } from '../flight.model';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  flights: Flight[];
+
+  // connects our flights.service.ts imported at top
+  constructor( private flightsService: FlightsService ) { }
 
   ngOnInit(): void {
+    this.flights = this.flightsService.getFlights();
   }
 
+  // this method will live in the flights service
+  getFlights() {
+    // function to get existing flights
+  }
 }

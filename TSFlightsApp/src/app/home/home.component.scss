@@ -1,0 +1,6 @@
+// styles flight information to be spaced on the same row.
+.flight_results {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
